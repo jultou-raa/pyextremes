@@ -63,7 +63,7 @@ Multiple ways of fitting the continuous distributions to the data are supported:
 - `Emcee` - Markov Chain Monte Calro, see [Emcee](https://emcee.readthedocs.io/en/stable/)
   package by Dan Foreman-Mackey
 - `MOM` - Method of Moments, uses [SciPy](https://www.scipy.org)
-- `Lmoments` - L-moment, uses (lmoments3)[https://github.com/Ouranosinc/lmoments3/]
+- `Lmoments` - L-moment, uses [lmoments3](https://github.com/Ouranosinc/lmoments3/)
 
 ## Installation
 
