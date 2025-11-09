@@ -17,6 +17,7 @@ class AbstractModelBaseClass(abc.ABC):
         extremes: pd.Series,
         distribution: typing.Union[str, scipy.stats.rv_continuous],
         distribution_kwargs: typing.Optional[dict] = None,
+        method="MLE",
         **kwargs,
     ) -> None:
         """
@@ -40,6 +41,9 @@ class AbstractModelBaseClass(abc.ABC):
             By default, no parameters are fixed.
             See documentation of a specific scipy.stats distribution
             for names of available parameters.
+            Lmoments method does not allow any fixed parameters.
+        method : str
+            The fitting method: MLE, Emcee, Lmoments or MOM.
         kwargs
             Keyword arguments passed to a model .fit method.
             MLE model:
@@ -63,7 +67,7 @@ class AbstractModelBaseClass(abc.ABC):
         # Declare extreme value distribution
         distribution_kwargs = distribution_kwargs or {}
         self.distribution = Distribution(
-            extremes=self.extremes, distribution=distribution, **distribution_kwargs
+            extremes=self.extremes, distribution=distribution, **distribution_kwargs, method=method
         )
 
         # Fit the distribution to extremes
