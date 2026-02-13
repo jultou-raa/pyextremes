@@ -46,6 +46,7 @@ def get_model(
     n_walkers: int = 100,
     n_samples: int = 500,
     progress: bool = False,
+    pool=None,
 ) -> Emcee: ...
 
 
@@ -104,6 +105,10 @@ def get_model(
                 suitable for Jupyter notebooks.
                 If False (default), no progress bar will be shown.
                 This progress bar is a part of the `emcee` package.
+            pool : object, optional
+                A pool object from the multiprocessing module or similar.
+                If provided, the sampler will use this pool to parallelize
+                computations.
 
     Returns
     -------
