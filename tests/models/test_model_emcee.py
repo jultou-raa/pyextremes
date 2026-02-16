@@ -1,3 +1,5 @@
+from unittest.mock import MagicMock, patch
+
 import numpy as np
 import pandas as pd
 import pytest
@@ -65,8 +67,6 @@ class TestEmcee:
             )
 
     def test_fit_with_pool(self, emcee_model):
-        from unittest.mock import MagicMock, patch
-
         # We need to patch emcee.EnsembleSampler where it is used in pyextremes.models.model_emcee
         with patch(
             "pyextremes.models.model_emcee.emcee.EnsembleSampler"
