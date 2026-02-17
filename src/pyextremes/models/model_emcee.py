@@ -9,6 +9,7 @@ import scipy.optimize
 import scipy.stats
 
 from pyextremes.models.model_base import AbstractModelBaseClass
+from pyextremes.typing import PoolType
 
 logger = logging.getLogger(__name__)
 
@@ -29,7 +30,7 @@ class Emcee(AbstractModelBaseClass):
         n_walkers: int = 100,
         n_samples: int = 500,
         progress: bool = False,
-        pool=None,
+        pool: typing.Optional[PoolType] = None,
     ) -> None:
         super().__init__(
             extremes=extremes,
@@ -52,7 +53,7 @@ class Emcee(AbstractModelBaseClass):
         n_walkers: int = kwargs.pop("n_walkers")
         n_samples: int = kwargs.pop("n_samples")
         progress: bool = kwargs.pop("progress")
-        pool = kwargs.pop("pool", None)
+        pool: typing.Optional[PoolType] = kwargs.pop("pool", None)
         if len(kwargs) != 0:
             raise TypeError(
                 f"unrecognized arguments passed in: {', '.join(kwargs.keys())}"
