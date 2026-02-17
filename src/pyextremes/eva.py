@@ -22,6 +22,7 @@ from pyextremes.plotting import (
     pyextremes_rc,
 )
 from pyextremes.tests import KolmogorovSmirnov
+from pyextremes.typing import PoolType
 
 logger = logging.getLogger(__name__)
 
@@ -897,7 +898,7 @@ class EVA:
         n_walkers: int = 100,
         n_samples: int = 500,
         progress: bool = False,
-        pool=None,
+        pool: typing.Optional[PoolType] = None,
     ) -> None: ...
 
     def fit_model(
@@ -966,7 +967,7 @@ class EVA:
                     suitable for Jupyter notebooks.
                     If False (default), no progress bar will be shown.
                     This progress bar is a part of the `emcee` package.
-                pool : object, optional
+                pool : PoolType, optional
                     A pool object from the multiprocessing module or similar.
                     If provided, the sampler will use this pool to parallelize
                     computations.
