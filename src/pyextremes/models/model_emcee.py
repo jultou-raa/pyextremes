@@ -9,7 +9,16 @@ import scipy.optimize
 import scipy.stats
 
 from pyextremes.models.model_base import AbstractModelBaseClass
-from pyextremes.typing import PoolType
+
+
+@typing.runtime_checkable
+class PoolType(typing.Protocol):
+    def map(
+        self,
+        func: typing.Callable[..., typing.Any],
+        iterable: typing.Iterable[typing.Any],
+        /,
+    ) -> typing.Iterable[typing.Any]: ...
 
 logger = logging.getLogger(__name__)
 

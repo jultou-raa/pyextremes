@@ -3,11 +3,11 @@ from typing import Literal, Optional, Union, overload
 import pandas as pd
 import scipy.stats
 
-from pyextremes.models.model_emcee import Emcee
+from pyextremes.models.model_emcee import Emcee, PoolType
 from pyextremes.models.model_lmoments import Lmoments
 from pyextremes.models.model_mle import MLE
 from pyextremes.models.model_mom import MOM
-from pyextremes.typing import PoolType
+
 
 
 @overload

@@ -22,7 +22,7 @@ from pyextremes.plotting import (
     pyextremes_rc,
 )
 from pyextremes.tests import KolmogorovSmirnov
-from pyextremes.typing import PoolType
+from pyextremes.models.model_emcee import PoolType
 
 logger = logging.getLogger(__name__)
 
