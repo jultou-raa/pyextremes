@@ -13,6 +13,7 @@ import scipy.stats
 
 from pyextremes.extremes import ExtremesTransformer, get_extremes, get_return_periods
 from pyextremes.models import MLE, Distribution, Emcee, get_model
+from pyextremes.models.model_emcee import PoolType
 from pyextremes.plotting import (
     plot_corner,
     plot_extremes,
@@ -22,7 +23,6 @@ from pyextremes.plotting import (
     pyextremes_rc,
 )
 from pyextremes.tests import KolmogorovSmirnov
-from pyextremes.models.model_emcee import PoolType
 
 logger = logging.getLogger(__name__)
 

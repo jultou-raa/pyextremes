@@ -9,7 +9,6 @@ from pyextremes.models.model_mle import MLE
 from pyextremes.models.model_mom import MOM
 
 
-
 @overload
 def get_model(
     model: Literal["MLE"],
